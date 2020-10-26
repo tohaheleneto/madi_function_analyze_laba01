@@ -48,8 +48,13 @@ class App extends React.Component {
         }
 
         for (let i = 0; i < this.state.value; ++i) {
-                if (B[i] === 1)
-                    ctx.fillRect(i * 20, this.state.y * 20, 20, 20);
+            if (B[i] === 1) {
+                ctx.fillStyle = 'black';
+                ctx.fillRect(i * 20, this.state.y * 20, 20, 20);
+            } else {
+                ctx.fillStyle = 'linen';
+                ctx.fillRect(i * 20, this.state.y * 20, 20, 20);
+            }
         }
         this.setState({A : B, y :this.state.y + 1})
         event.preventDefault();
@@ -77,8 +82,13 @@ class App extends React.Component {
                 this.setState({A : A, y : 1})
 
                 for (let i = 0; i < temp; ++i) {
-                    if (A[i] === 1)
-                    ctx.fillRect(i * 20, 0, 20, 20);
+                    if (A[i] === 1) {
+                        ctx.fillStyle = 'black';
+                        ctx.fillRect(i * 20, 0, 20, 20);
+                    } else {
+                        ctx.fillStyle = 'linen';
+                        ctx.fillRect(i * 20, 0, 20, 20);
+                    }
                 }
             }
         } else {
